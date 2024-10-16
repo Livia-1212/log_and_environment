@@ -1,0 +1,17 @@
+2024-10-16 16:11:51 - root - INFO - Logging configured successfully.
+2024-10-16 16:11:51 - root - INFO - Command 'add' registered successfully.
+2024-10-16 16:11:51 - root - INFO - Command 'subtract' registered successfully.
+2024-10-16 16:11:51 - root - INFO - Application started. Type 'exit' to exit.
+2024-10-16 16:12:28 - root - INFO - Logging configured successfully.
+2024-10-16 16:12:28 - root - INFO - Command 'add' registered successfully.
+2024-10-16 16:12:28 - root - INFO - Command 'subtract' registered successfully.
+2024-10-16 16:12:28 - root - INFO - Application started. Type 'exit' to exit.
+2024-10-16 16:12:37 - root - INFO - Exiting application.
+2024-10-16 16:15:55 - root - INFO - Logging configured successfully.
+2024-10-16 16:15:55 - root - INFO - Command 'add' registered successfully.
+2024-10-16 16:15:55 - root - INFO - Command 'subtract' registered successfully.
+2024-10-16 16:15:55 - root - INFO - Command 'multiply' registered successfully.
+2024-10-16 16:15:55 - root - INFO - Command 'division' registered successfully.
+2024-10-16 16:15:55 - root - INFO - Application started. Type 'exit' to exit.
+2024-10-16 16:16:04 - root - ERROR - An error occurred while executing 'add': AddCommand.execute() missing 1 required positional argument: 'b'
+2024-10-16 16:16:22 - root - INFO - Exiting application.

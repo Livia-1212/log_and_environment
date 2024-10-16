@@ -1,5 +1,7 @@
 import pytest
 from app import App
+from app.plugins.greet import GreetCommand
+from icecream import ic
 
 def test_app_greet_command(capfd, monkeypatch):
     """Test that the REPL correctly handles the 'greet' command and outputs 'Hello, World!'."""
@@ -18,3 +20,10 @@ def test_app_greet_command(capfd, monkeypatch):
     
     # Assert that 'Hello, World!' was printed to stdout
     assert "Hello, World!" in out, "The 'greet' command did not produce the expected output."
+
+# Tests for the GreetCommand directly
+def test_greet_command():
+    greet_command = GreetCommand()
+    # Execute the command and capture output
+    greet_command.execute()  # This should log and print the greeting
+    ic("Greet command executed.")  # Using Icecream for output verification
