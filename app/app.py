@@ -29,7 +29,7 @@ class App:
 
 
     def configure_logging(self):
-        logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+        logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
         logging.info("Logging configured.")
 
     def load_environment_variables(self):
