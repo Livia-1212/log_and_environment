@@ -1,6 +1,5 @@
 import pytest
-from app import App
-from app.plugins.greet import GreetCommand
+from app.app import App
 from icecream import ic
 
 def test_app_greet_command(capfd, monkeypatch):
@@ -11,19 +10,12 @@ def test_app_greet_command(capfd, monkeypatch):
     app = App()
     with pytest.raises(SystemExit) as e:
         app.start()
-    
+
     # Check that the exit was graceful with the correct exit code
+    ic(e.value.code)
     assert e.value.code == 0, "The app did not exit as expected"
 
-    # Capture the output from the 'greet' command
-    out, err = capfd.readouterr()
-    
-    # Assert that 'Hello, World!' was printed to stdout
-    assert "Hello, World!" in out, "The 'greet' command did not produce the expected output."
-
-# Tests for the GreetCommand directly
-def test_greet_command():
-    greet_command = GreetCommand()
-    # Execute the command and capture output
-    greet_command.execute()  # This should log and print the greeting
-    ic("Greet command executed.")  # Using Icecream for output verification
+    # Capture the output and check if "Hello, World!" was printed
+    captured = capfd.readouterr()
+    ic(captured.out)  # Log the captured output
+    assert "Hello, World!" in captured.out, "The greet command did not produce the expected output."

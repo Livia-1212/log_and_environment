@@ -1,5 +1,5 @@
 # main.py
-
+from dotenv import load_dotenv, dotenv_values
 from app.app import App  # Importing the App class from your app module
 
 if __name__ == "__main__":
