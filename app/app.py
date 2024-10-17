@@ -3,7 +3,7 @@
 import os
 import sys
 import logging
-from dotenv import load_dotenv
+from dotenv import load_dotenv, dotenv_values
 from app.commands.command_handler import CommandHandler
 from app.commands.commands.calc_commands import AddCommand, SubtractCommand, MultiplyCommand, DivideCommand
 from app.plugins.greet import GreetCommand
