@@ -6,9 +6,17 @@ from app.commands.command_handler import CommandHandler
 from app.commands.commands import AddCommand, SubtractCommand, MultiplyCommand, DivideCommand
 
 @pytest.fixture
-def calc_instance():
+def app_instance():
     """Fixture to create a Calculator instance for testing."""
     return App()
+
+def run_app_and_exit_on_unknown_command(inputs, monkeypatch):
+    """Run the app and simulate inputs, expecting it to exit on unknown command."""
+    with pytest.raises(SystemExit) as e:
+        # Use monkeypatch to simulate user input
+        monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+        App().start()
+    return e.value.code  # Return the exit code for assertion
 
 @pytest.fixture
 def cmd_handler():

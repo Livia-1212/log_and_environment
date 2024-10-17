@@ -18,8 +18,7 @@ class CommandHandler:
         """Execute the command based on the command name and provided arguments."""
         if command_name not in self.commands:
             logging.error(f"No such command: {command_name}")
-            print(f"No such command: {command_name}")
-            return None
+            raise KeyError(f"No such command: {command_name}")  # Raise KeyError for unknown commands
 
         try:
             result = self.commands[command_name].execute(*args)
